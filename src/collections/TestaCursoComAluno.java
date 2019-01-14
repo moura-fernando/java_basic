@@ -1,5 +1,9 @@
 package collections;
 
+import java.util.Iterator;
+import java.util.Set;
+
+
 import modelo.turma.Aluno;
 import modelo.turma.Aula;
 import modelo.turma.Curso;
@@ -26,6 +30,16 @@ public class TestaCursoComAluno {
 		javaColecoes.getAlunos().forEach(aluno -> {
 			System.out.println(aluno);
 		});
+		
+		
+		//ITERATOR
+		Set<Aluno> alunos = javaColecoes.getAlunos();		
+		Iterator<Aluno> iterador =  alunos.iterator();
+		
+		while (iterador.hasNext()) {
+			Aluno proximoAluno = iterador.next();
+			System.out.println(proximoAluno.getNome());
+		}
+		
 	}
-	
 }

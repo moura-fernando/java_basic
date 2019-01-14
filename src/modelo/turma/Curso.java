@@ -3,8 +3,10 @@ package modelo.turma;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Curso {
 	
@@ -12,6 +14,9 @@ public class Curso {
 	private String instrutor;
 	private List<Aula> aulas = new ArrayList<>();
 	private Set<Aluno> alunos = new HashSet<>();
+//	private Set<Aluno> alunos = new TreeSet<>();
+//	private Set<Aluno> alunos = new LinkedHashSet<>(); //Se rodar um for, trás na ordem em que os elementos foram adicionados.
+
 	
 	public Curso(String nome, String instrutor) {
 		super();

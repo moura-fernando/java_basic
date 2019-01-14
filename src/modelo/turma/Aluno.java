@@ -1,6 +1,6 @@
 package modelo.turma;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
 	
 	private String nome;
 	private int numeroMatricula;
@@ -36,5 +36,12 @@ public class Aluno {
     public int hashCode() {
     	return this.nome.hashCode();
     }
+
+	@Override
+	public int compareTo(Aluno o) {
+		return this.nome.compareTo(o.getNome());
+	}
+
+
 
 }
