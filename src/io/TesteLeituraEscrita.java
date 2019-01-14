@@ -18,7 +18,7 @@ public class TesteLeituraEscrita {
 		
 		
 		//Reader
-		InputStream in = new FileInputStream("D:\\DEV\\workspaces\\ciee_web_2018\\ZA-Java\\src\\io\\reader.txt");
+		InputStream in = new FileInputStream("/Volumes/BKP/DEV/wrk_spring/ZA-Java/src/io/reader.txt");
 		Reader is = new InputStreamReader(in);
 		BufferedReader reader = new BufferedReader(is);
 		
