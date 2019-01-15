@@ -30,7 +30,6 @@ public class TestaListaDeAula {
 		
 //		aulas.forEach(aula -> System.out.println(aula.getTitulo()));
 		
-		
 	}
 
 }
