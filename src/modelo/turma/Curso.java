@@ -2,11 +2,12 @@ package modelo.turma;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
-import java.util.TreeSet;
 
 public class Curso {
 	
@@ -16,6 +17,7 @@ public class Curso {
 	private Set<Aluno> alunos = new HashSet<>();
 //	private Set<Aluno> alunos = new TreeSet<>();
 //	private Set<Aluno> alunos = new LinkedHashSet<>(); //Se rodar um for, trás na ordem em que os elementos foram adicionados.
+	private Map<Integer,Aluno> matriculaParaAluno = new HashMap<>();
 
 	
 	public Curso(String nome, String instrutor) {
@@ -44,6 +46,7 @@ public class Curso {
 	
 	public void matricula(Aluno aluno) {
 		this.alunos.add(aluno);
+		this.matriculaParaAluno.put(aluno.getNumeroMatricula(), aluno);
 	}
 	
 	public Set<Aluno> getAlunos() {
@@ -63,5 +66,13 @@ public class Curso {
 	public String toString() {
 		return "[Curso: "+ nome + ", tempo total: " + this.getTempoTotal() + ","+
 	 "aulas: " + this.aulas + " ]";
+	}
+
+
+
+	public Aluno buscaMatriculado(int numero) {
+		if (!matriculaParaAluno.containsKey(numero))
+			throw new NoSuchElementException("Não existe um aluno correspondente a matrícula: " + numero);
+		return matriculaParaAluno.get(numero);
 	}
 }
